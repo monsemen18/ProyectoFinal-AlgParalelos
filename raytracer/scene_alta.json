@@ -1,0 +1,32 @@
+{
+  "samplesPerPixel": 16,
+  "rayMaxBounces": 6,
+  "ambientLightIntensity": 0.15,
+  "background": { "r": 0.4, "g": 0.4, "b": 0.4 },
+  "camera": {
+    "imageWidth": 800,
+    "imageHeight": 600,
+    "position": { "x": 24, "y": 9, "z": -55 },
+    "direction": { "x": -0.5, "y": 0, "z": 1 },
+    "normalUp": { "x": 0, "y": -1, "z": 0 },
+    "angleOfVision": 40.0,
+    "focalDistance": 1.0
+  },
+  "materials": [
+    { "id": "red",   "color": { "r": 1.0, "g": 0.2, "b": 0.2 }, "diffuseCoefficient": 1.0, "specularCoefficient": 0.9, "specularHardness": 100, "reflectivity": 0.6 },
+    { "id": "green", "color": { "r": 0.2, "g": 0.7, "b": 0.2 }, "diffuseCoefficient": 0.7, "specularCoefficient": 0.3, "specularHardness": 16,  "reflectivity": 0.0 },
+    { "id": "blue",  "color": { "r": 0.0, "g": 0.0, "b": 0.9 }, "diffuseCoefficient": 0.2, "specularCoefficient": 0.4, "specularHardness": 64,  "reflectivity": 0.8 },
+    { "id": "floor", "color": { "r": 0.7, "g": 0.7, "b": 0.7 }, "diffuseCoefficient": 0.9, "specularCoefficient": 0.1, "specularHardness": 10,  "reflectivity": 0.0 }
+  ],
+  "primitives": [
+    { "type": "sphere", "name": "sphere",  "material": "red",   "center": { "x": -3, "y": 2, "z": -1 }, "radius": 3.0 },
+    { "type": "sphere", "name": "sphere2", "material": "green", "center": { "x": 1,  "y": 0, "z": 15 }, "radius": 1.0 },
+    { "type": "box",    "name": "box",     "material": "blue",  "position": { "x": 1,  "y": -1, "z": 4  }, "width": 3.0,  "height": 3.0,  "depth": 3.0  },
+    { "type": "box",    "name": "box2",    "material": "blue",  "position": { "x": -7, "y": -1, "z": 24 }, "width": 18.0, "height": 18.0, "depth": 24.0 },
+    { "type": "plane",  "name": "floor",   "material": "floor", "point": { "x": 0, "y": -1, "z": 0 }, "normal": { "x": 0, "y": 1, "z": 0 } }
+  ],
+  "lights": [
+    { "type": "pointLight",   "color": { "r": 0.9, "g": 0.9, "b": 1.0 }, "intensity": 1.0, "position": { "x": -22, "y": 5, "z": 25 } },
+    { "type": "surfaceLight",  "color": { "r": 1.0, "g": 1.0, "b": 1.0 }, "intensity": 1.0, "position": { "x": -3, "y": 5, "z": -1 }, "direction": { "x": -1, "y": -1, "z": 0 }, "size": 5.0, "samples": 300 }
+  ]
+}
